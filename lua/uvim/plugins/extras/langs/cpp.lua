@@ -97,14 +97,6 @@ return {
     end,
   },
 
-  -- Autocomplete
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "p00f/clangd_extensions.nvim",
-    },
-  },
-
   -- DAP
   {
     "mfussenegger/nvim-dap",
@@ -123,7 +115,7 @@ return {
       "williamboman/mason.nvim",
       "jay-babu/mason-null-ls.nvim",
     },
-    config = function()
+    config = function(_, opts)
       require("mason").setup()
       require("mason-null-ls").setup({
         ensure_installed = { "clang_format" },
@@ -131,9 +123,9 @@ return {
 
       local null_ls = require("null-ls")
       null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.clang_format,
-        },
+        sources = vim.tbl_deep_extend("force", opts.sources or {}, {
+            null_ls.builtins.formatting.clang_format
+        }),
       })
     end,
   },

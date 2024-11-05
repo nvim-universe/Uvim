@@ -25,16 +25,6 @@ return {
     end,
   },
 
-  -- Autocomplete
-  {
-    "hrsh7th/nvim-cmp",
-    optional = true,
-    opts = function(_, opts)
-      opts.auto_brackets = opts.auto_brackets or {}
-      table.insert(opts.auto_brackets, "lua")
-    end,
-  },
-
   -- Formatting and Linting
   {
     "jose-elias-alvarez/null-ls.nvim",

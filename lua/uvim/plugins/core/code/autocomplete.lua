@@ -47,17 +47,30 @@ return {
     opts = function(_, opts)
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
-      local defaults = require("cmp.config.default")()
+      local luasnip = require("luasnip")
       require("luasnip.loaders.from_vscode").lazy_load()
+
+      -- Use buffer source for `/` and `?`
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+
+      -- Use cmdline and path for `:`
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          { name = "cmdline" },
+        }),
+        matching = { disallow_symbol_nonprefix_matching = false },
+      })
 
       return {
         auto_brackets = {},
-
-        completion = {
-          completeopt = "menu,menuone,noinsert" .. (autoselect and "" or ",noselect"),
-        },
-
-        preselect = auto_select and cmp.PreselectMode.Item or cmp.PreselectMode.None,
 
         mapping = cmp.mapping.preset.insert({
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -78,7 +91,6 @@ return {
           end, { "i", "s" }),
           ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
-              local entries = cmp.get_entries()
               cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
 
               if luasnip.jumpable(-1) then
@@ -89,7 +101,7 @@ return {
             end
           end, { "i", "s" }),
 
-          ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+          ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Don't accept currently selected item if not preselected
         }),
 
         sources = cmp.config.sources({
