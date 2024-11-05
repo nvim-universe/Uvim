@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="Logo" src="https://private-user-images.githubusercontent.com/87681482/383199666-9e9ea78f-ba3e-4428-bd25-34723c36b311.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzA4MTkyNTcsIm5iZiI6MTczMDgxODk1NywicGF0aCI6Ii84NzY4MTQ4Mi8zODMxOTk2NjYtOWU5ZWE3OGYtYmEzZS00NDI4LWJkMjUtMzQ3MjNjMzZiMzExLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTA1VDE1MDIzN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTc4NmI1NmUwNDg4NTRiMjg4ZTQ0YjhlMWZjMTNlODFmMjQ4M2U2N2QzNWJmNjI0MjBlM2UyMTY2ZjEyZTIyZDkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.zoEcRNOQm8pHMDuJaP1PG8z-jomFVedY65mtnFtz1aM" />
+<img alt="logo" src="https://github.com/user-attachments/assets/70fc1c5a-e6b8-4969-826e-cc38e01c901f" />
 </div>
 
 <hr>
@@ -26,14 +26,14 @@
 
 <hr>
 
-Uvim is (another) Neovim configuration built on [lazy.nvim](https://github.com/folke/lazy.nvim).
+**Uvim** is (_another_) Neovim configuration built on [lazy.nvim](https://github.com/folke/lazy.nvim).
 
 > [!NOTE]
 > ***Why Another Neovim configuration?*** I used [LazyVim](https://github.com/LazyVim/LazyVim), [LunarVim](https://github.com/LunarVim/LunarVim), and [AstroNvim](https://github.com/AstroNvim/AstroNvim) for some time. My primary issue is their entire configuration is held within a Neovim package and instead provides a starter file to merge changes with their configuration.  Although this felt good for beginners, I wanted more control over the configuration and the ability to easily see all settings while inside `~/.config/nvim`. So, I decided to take my favorite aspects of each and convert into a monorepo that can be directly installed.
 
-![image](https://private-user-images.githubusercontent.com/87681482/383192337-c655c137-3ea0-4856-a753-b208b570ade9.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzA4MTgyMjUsIm5iZiI6MTczMDgxNzkyNSwicGF0aCI6Ii84NzY4MTQ4Mi8zODMxOTIzMzctYzY1NWMxMzctM2VhMC00ODU2LWE3NTMtYjIwOGI1NzBhZGU5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTA1VDE0NDUyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWYzNmQ0NDViM2YyZmQzM2MxZTZiMDczNDFmYWUzNmYyNDM3ODA3NTJhZDU3NWYxN2UwNDRlMmE4ZTIyMjQwMDAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.JjcnSG8z_Gs0uUgWBbVrd5JSIjvjj-UsvyxJbbB0J4o)
+![image](https://github.com/user-attachments/assets/fb5948ec-9103-49d7-8407-2b34c27f5ec7)
 
-![image](https://private-user-images.githubusercontent.com/87681482/383192844-5dca3fda-b1dd-499e-8c37-005b1bd70e77.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzA4MTgyMjUsIm5iZiI6MTczMDgxNzkyNSwicGF0aCI6Ii84NzY4MTQ4Mi8zODMxOTI4NDQtNWRjYTNmZGEtYjFkZC00OTllLThjMzctMDA1YjFiZDcwZTc3LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTA1VDE0NDUyNVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTA5ZGJkYWNhMzlmNWM1MDg4Nzg4YjNkODM3MGU1NjM2NDg5NWY1ZmZmZDZmNGViZDg3MmY3NjJlMTk5MDMyZDUmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.HN3hh7OQXW4mr9mBAjjhsZBL2oqt5J5boZQZWlobr3c)
+![image](https://github.com/user-attachments/assets/5318301e-cc9b-4a54-bad1-d794e534d058)
 
 ## Features
 
